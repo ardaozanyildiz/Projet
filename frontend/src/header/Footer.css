@@ -1,0 +1,30 @@
+/* footer.css */
+
+/* Footer container */
+.copyright {
+    position: fixed; /* Fixe le footer en bas de la page */
+    bottom: 0;
+    left: 0;
+    width: 100%; /* Occupe toute la largeur */
+    background-color: black; /* Fond noir pour le footer */
+    color: white; /* Texte en blanc */
+    text-align: center; /* Centrer le texte */
+    padding: 10px 0; /* Espacement autour du texte */
+    z-index: 100; /* Assure que le footer est au-dessus de tout autre élément */
+    font-family: Arial, sans-serif;
+  }
+  
+  .copyright p {
+    font-size: 1rem;
+    margin: 0; /* Enlève la marge par défaut */
+  }
+  
+  /* Style du texte */
+  .copyright p {
+    color: #cb8cfb; /* Violette clair pour le texte */
+  }
+  
+
+  
+  
+  

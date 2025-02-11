@@ -2,18 +2,18 @@ import React, { useState } from "react";
 import axios from "axios";
 
 const SearchArtist = () => {
+  
   const [artist, setArtist] = useState(""); // Stocke le nom entré par l'utilisateur
   const [artistData, setArtistData] = useState(null); // Stocke les infos de l'artiste
   const [error, setError] = useState(""); // Stocke les erreurs
 
-  const handleSearch = async () => {
+  const handleSearch = async () => { //attendre le resultat
     if (!artist) return;
 
     try {
         const response = await axios.get(`/api/deezer/search/artist?q=${encodeURIComponent(artist)}`);
 
           
-      
       if (response.data.data.length > 0) {
         const artistInfo = response.data.data[0]; // Récupère le premier résultat
         setArtistData({
@@ -21,6 +21,7 @@ const SearchArtist = () => {
           name: artistInfo.name,
           picture: artistInfo.picture_medium, // URL de l'image
         });
+        
         setError("");
       } else {
         setArtistData(null);
