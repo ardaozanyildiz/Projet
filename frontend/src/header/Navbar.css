@@ -6,9 +6,11 @@
 
 .navbar-nav .nav-link {
   color: #06c2ca;
-  font-size: 22px;
+  font-size: 21px;
   margin-right: 30px;
   text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  
   
 }
 
