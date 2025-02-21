@@ -8,7 +8,8 @@ import Jeux from "./pages/Jeux";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import AboutArda from "./pages/AboutArda";
-import AboutHamza from "./pages/AboutHamza"
+import AboutHamza from "./pages/AboutHamza";
+import TutoJeux from "./pages/TutoJeux"
 
 
 
@@ -23,6 +24,7 @@ function App() {
             <Route path='/SearchArtist' element={<SearchArtist/>} />
             <Route path='/Jeux' element={<Jeux/>} />
             <Route path='/Contact' element={<Contact/>} />
+            <Route path='/TutoJeux' element={<TutoJeux/>} />
             <Route path='/AboutArda' element={<AboutArda/>} />
             <Route path='/AboutHamza' element={<AboutHamza/>} />
             <Route path='*' element={<NotFound/>} />

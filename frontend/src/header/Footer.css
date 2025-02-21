@@ -6,7 +6,7 @@
     bottom: 0;
     left: 0;
     width: 100%; /* Occupe toute la largeur */
-    background-color: black; /* Fond noir pour le footer */
+    background-color: #1b4965; /* Fond noir pour le footer */
     color: white; /* Texte en blanc */
     text-align: center; /* Centrer le texte */
     padding: 10px 0; /* Espacement autour du texte */
@@ -21,7 +21,7 @@
   
   /* Style du texte */
   .copyright p {
-    color: #cb8cfb; /* Violette clair pour le texte */
+    color: #bee9e8; /* Violette clair pour le texte */
   }
   
 

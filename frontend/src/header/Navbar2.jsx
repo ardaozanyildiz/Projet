@@ -9,9 +9,9 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 function Navbar2() {
     return (
-<nav class="navbar navbar-expand-lg" style={{fontFamily:"league spartan", background:"black"}}>
+<nav class="navbar navbar-expand-lg" style={{fontFamily:"league spartan", background:"white"}}>
   <div class="container-fluid">
-  <Link to="/"><img src="./src/image/Melodify3.png" alt="" id='logo'/></Link>
+  <Link to="/"><img src="./src/image/1.png" alt="" id='logo'/></Link>
             
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -26,16 +26,6 @@ function Navbar2() {
         </li>
         <li class="nav-item">
           <a class="nav-link" ><Link to="/Contact">Contact</Link></a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" button="button" data-bs-toggle="dropdown" aria-expanded="false" style={{color:"#cd36ff", cursor:"pointer"}}>
-            About
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" ><Link to="/AboutArda">Arda</Link></a></li>
-            <li><a class="dropdown-item" ><Link to="/AboutHamza">Hamza</Link></a></li>
-          
-          </ul>
         </li>
       </ul>
     </div>
