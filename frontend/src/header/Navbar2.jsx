@@ -18,14 +18,14 @@ function Navbar2() {
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" style={{marginLeft:"20px"}}><Link to="/SearchArtist">Recherche</Link></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" ><Link to="/Jeux">Jeux</Link></a>
+      <li class="nav-item" style={{marginLeft:"1200px"}}>
+          <a class="nav-link" ><Link to="/TutoJeux">Tuto</Link></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" ><Link to="/Contact">Contact</Link></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" ><Link to="/Login">Login</Link></a>
         </li>
       </ul>
     </div>
