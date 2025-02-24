@@ -16,15 +16,15 @@ function HomePages(props) {
                         <p class="text-title">Quiz de Math</p>
                         <p class="text-body">- 10 questions <br /> - 10 secondes par questions</p>
                     </div>
-                        <button class="card-button"><a><Link to="/QuizMath">Jouer</Link></a></button>
+                    <Link to="/QuizMath"><button class="card-button"><a>Jouer</a></button></Link>
                 </div>
 
-                <div class="card" style={{ borderRadius: "20px",backgroundImage: "url('./src/image/fr.jpeg')", backgroundSize: "cover"}}>
+                <div class="card" style={{ borderRadius: "20px"}}>
                     <div class="card-details">
-                        <p class="text-title">  </p>
-                        <p class="text-body"></p>
+                        <p class="text-title">Quiz Francais</p>
+                        <p class="text-body">- 10 questions <br /> - 10 secondes par questions</p>
                     </div>
-                        <button class="card-button" style={{background:"#fa757a"}}><a><Link to="/QuizFr">Jouer</Link></a></button>
+                    <Link to="/QuizFr"><button class="card-button" style={{background:"#fa757a"}}><a>Jouer</a></button></Link>
                 </div>
 
                 <div class="card" style={{borderRadius:"20px"}}>
@@ -32,7 +32,7 @@ function HomePages(props) {
                         <p class="text-title">Quiz Capital</p>
                         <p class="text-body">- 10 questions <br /> - regarder l'image est deviner la capital <br /> - 10 secondes par questions</p>
                     </div>
-                        <button class="card-button"><a><Link to="/QuizCapital">Jouer</Link></a></button>
+                    <Link to="/QuizCapital"><button class="card-button"><a>Jouer</a></button></Link>
                 </div>
 
                 

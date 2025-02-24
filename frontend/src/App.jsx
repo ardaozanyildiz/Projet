@@ -8,6 +8,7 @@ import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import TutoJeux from "./pages/TutoJeux";
 import Login from "./pages/Login";
+import Signin from "./pages/Signin";
 import QuizMath from "./pages/QuizMath";
 import QuizFr from "./pages/QuizFr";
 import QuizCapital from "./pages/QuizCapital";
@@ -26,6 +27,7 @@ function App() {
             <Route path='/Contact' element={<Contact/>} />
             <Route path='/TutoJeux' element={<TutoJeux/>} />
             <Route path='/Login' element={<Login/>} />
+            <Route path='/Signin' element={<Signin/>} />
             <Route path='/QuizMath' element={<QuizMath/>} />
             <Route path='/QuizFr' element={<QuizFr/>} />
             <Route path='/QuizCapital' element={<QuizCapital/>} />
