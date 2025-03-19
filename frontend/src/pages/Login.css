@@ -1,4 +1,4 @@
-/* From Uiverse.io by Yaya12085 */ 
+
 .form {
     display: flex;
     flex-direction: column;
@@ -9,7 +9,10 @@
     border-radius: 20px;
     position: relative;
     margin-top: 160px;
-    margin-left: 650px;
+    margin-left: 40%;
+
+
+    
   }
   
   .title {
@@ -102,7 +105,7 @@
   }
   
   .form label .input:valid + span {
-    color: green;
+    color: rgb(47, 38, 203);
   }
   
   .submit {

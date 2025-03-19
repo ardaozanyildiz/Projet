@@ -21,7 +21,7 @@ function Login(props) {
             </div>  
                     
             <label>
-                <input required placeholder="" type="email" class="input" />
+                <input required placeholder="" type="text" class="input" />
                 <span>Email</span>
             </label> 
                 
@@ -29,12 +29,8 @@ function Login(props) {
                 <input required placeholder="" type="password" class="input" />
                 <span>Mots de passe</span>
             </label>
-            <label>
-                <input required placeholder="" type="password" class="input" />
-                <span>Confirmer le mots de passe</span>
-            </label>
             <button class="submit">Submit</button>
-            <p class="signin">Si tu as déjà un compte? <a><Link to="/Signin">Sign in</Link></a></p>
+            <p class="signin">Si tu as déjà un compte? <a><Link to="/Signin">Connecte</Link></a></p>
         </form>
     );
 }
