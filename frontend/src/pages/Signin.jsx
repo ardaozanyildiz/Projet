@@ -1,5 +1,5 @@
 import React from 'react';
-
+import {Link} from 'react-router-dom';
 
 function Signin(props) {
     return (
@@ -19,6 +19,7 @@ function Signin(props) {
                     <span>Mots de passe</span>
                 </label>
                 <button class="submit">Submit</button>
+                <p class="signin">Si tu as pas de compte? <a><Link to="/Login">Inscris toi</Link></a></p>
             </form>
         </div>
     );

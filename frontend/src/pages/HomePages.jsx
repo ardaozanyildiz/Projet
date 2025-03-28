@@ -11,7 +11,7 @@ function HomePages(props) {
             </div>
 
             <div class="card-container">
-            <div className="card" style={{ borderRadius: "20px", backgroundImage: "url('./src/image/Math.png')", backgroundSize:"cover"}}>
+                <div className="card" style={{ borderRadius: "20px", backgroundImage: "url('./src/image/Math.png')", backgroundSize:"cover"}}>
                     <div class="card-details">
                         <p class="text-title">Quiz de Math</p>
                         <p class="text-body">- 10 questions <br /> - 10 secondes par questions</p>

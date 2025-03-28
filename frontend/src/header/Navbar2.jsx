@@ -22,7 +22,7 @@ function Navbar2() {
           <a class="nav-link" ><Link to="/TutoJeux">Tuto</Link></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" ><Link to="/Contact">Contact</Link></a>
+          <a class="nav-link" ><Link to="/Contact">À propos</Link></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" ><Link to="/Signin">Connexion</Link></a>
