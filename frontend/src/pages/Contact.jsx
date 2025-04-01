@@ -35,7 +35,7 @@ function Contact(props) {
                                 <p>Je suis encore dans les débuts de mon apprentissage <br /> donc je n'ai pas encore eu de grandes expériences <br /> en informatique, à part les études.</p>
                                 <li><span>2023:</span><br />Walmart</li>
                                 <li><span>2024:</span><br />Entraîneur camp de basket</li>
-                                <li><p href="./src/image/cvArda." download class="btn" style={{color:"#feba29"}}>Télécharger mon cv</p></li>
+                                <li><a href="./src/image/cvArda.docx" download class="btn" style={{color:"#feba29"}}>Télécharger mon cv</a></li>
                             </ul>
                         </div>
 
