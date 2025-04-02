@@ -1,8 +1,21 @@
 import React, { useState, useRef } from 'react';
 import './QuizMath.css';
-import {data} from '../assets/data';
+import axios from 'axios';
+//import {data} from '../assets/data';
 import {Link} from 'react-router-dom';
 function QuizMath(props) {
+
+    const[tabQuestions, SetQuestions] = useState([]);
+
+    const loadQuestion = async () =>{
+        const resultat = await axios.get("jdbc:mariadb://localhost:3306/api/questions");
+        setQuestions(resultat.data);
+
+    }
+
+
+
+
    
     let[index, setIndex] = useState(0);
     let[question,setQuestion] = useState(data[index]);
