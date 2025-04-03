@@ -7,11 +7,15 @@ function QuizMath(props) {
 
     const[tabQuestions, SetQuestions] = useState([]);
 
+
+
     const loadQuestion = async () =>{
-        const resultat = await axios.get("jdbc:mariadb://localhost:3306/api/questions");
+        const resultat = await axios.get("https://localhost:3306/api/questions");
         setQuestions(resultat.data);
 
     }
+
+   
 
 
 

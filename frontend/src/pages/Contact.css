@@ -1,76 +1,59 @@
-#about {
-    background-color: rgb(110, 110, 110);
-    padding: 50px 0;
+
+
+/* Corps de la page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    height: 100vh; /* Utilise toute la hauteur de l'écran */
 }
 
+/* Conteneur principal */
 .container {
-    width: 80%;
+    width: 40%;
     margin: 0 auto;
+    padding: 20px;
+    
 }
 
+/* Disposition des sections en une ligne */
 .row {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
 }
 
+/* Colonne gauche avec l'image */
 .about-col-1 {
     flex: 1;
-    padding: 20px;
+    max-width: 45%; /* L'image occupe 45% de la largeur */
 }
 
 .about-col-1 img {
-    width: 100%;
+    width: 15em;
+    margin-left: 7em;
     height: auto;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
+/* Colonne droite avec le texte */
+.about-col-1 + .about-col-1 {
+    flex: 1;
+    padding-left: 10px;
+}
+
+/* Style du titre */
 .sub-title {
+    font-size: 24px;
     color: #feba29;
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
+/* Style du texte */
 p {
-    font-size: 1.1rem;
+    font-size: 16px;
+    color: #333;
+    margin-top: 20px;
     line-height: 1.6;
-    margin-bottom: 20px;
-    color: black;
 }
-
-ul{
-    color: black;
-    font-size: medium;
-}
-
-
-  
-
-
-@media (max-width: 768px) {
-    .row {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .about-col-1 img {
-        max-width: 80%;
-        margin-bottom: 20px;
-    }
-
-    .tab-titles {
-        flex-direction: column;
-        margin-top: 20px;
-    }
-
-    .tab-links {
-        margin-bottom: 10px;
-    }
-}
-
-
-
-
 
