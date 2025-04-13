@@ -12,6 +12,7 @@ import Signin from "./pages/Signin";
 import QuizMath from "./pages/QuizMath";
 import QuizFr from "./pages/QuizFr";
 import QuizCapital from "./pages/QuizCapital";
+import PageIntroduction from "./pages/PageIntroduction";
 
 
 
@@ -31,6 +32,7 @@ function App() {
             <Route path='/QuizMath' element={<QuizMath/>} />
             <Route path='/QuizFr' element={<QuizFr/>} />
             <Route path='/QuizCapital' element={<QuizCapital/>} />
+            <Route path='/PageIntroduction' element={<PageIntroduction/>}/>
             <Route path='*' element={<NotFound/>} />
 
         </Routes>

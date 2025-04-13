@@ -32,7 +32,7 @@ function HomePages(props) {
                         <p class="text-title">Quiz Capital</p>
                         <p class="text-body">- 10 questions <br /> - regarder l'image est deviner la capital <br /> - 10 secondes par questions</p>
                     </div>
-                    <Link to="/QuizCapital"><button class="card-button" style={{background:"#e67d2e"}}><a>Jouer</a></button></Link>
+                    <Link to="/PageIntroduction"><button class="card-button" style={{background:"#e67d2e"}}><a>Jouer</a></button></Link>
                 </div>
 
                 
