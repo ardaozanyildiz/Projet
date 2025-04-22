@@ -7,6 +7,7 @@ function QuizFr() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+  const [counter, setCounter] = useState(0)
 
   const loadAllQuestions = async () => {
     try {
@@ -27,6 +28,10 @@ function QuizFr() {
       return;
     }
     setErrorMessage('');
+
+    if(selectedAnswer === tabQuestions[currentQuestionIndex].bonneReponse){
+      setCounter(counter + 1)
+    }
     setCurrentQuestionIndex(currentQuestionIndex + 1);
     setSelectedAnswer('');
   };
@@ -36,6 +41,7 @@ function QuizFr() {
       <div className='quiz'>
         <h2 style={{ textAlign: "center", marginTop: "10%" }}>Quiz terminé !</h2>
         <p style={{ textAlign: "center" }}>Merci pour ta participation</p>
+        <p style={{ textAlign: "center" }}>Score final : {counter} / {tabQuestions.length}</p> 
       </div>
     );
   }
