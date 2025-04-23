@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import {Link, useNavigate} from 'react-router-dom';
 import axios from 'axios';
+import { UserContext } from '../context/UserContext';
+import { useContext } from 'react';
 
 function Signin(props) {
 
@@ -8,6 +10,8 @@ function Signin(props) {
         email:"",
         mdp:""
     })
+
+    const { setUser } = useContext(UserContext);
 
     const setAttribut = (e) => {
         const value = e.target.value;
@@ -19,10 +23,18 @@ function Signin(props) {
     const checkClient = (e) =>{
         e.preventDefault();
         axios.post("http://localhost:8888/clients/verifClient", client)
-            .then(() =>{
-                navigate("/")
+            .then((res) =>{
+                if(res.data){
+                    localStorage.setItem("user", JSON.stringify(res.data));
+                    setUser(res.data);
+                    navigate("/Profil");
+                } else {
+                    alert("Email ou mot de passe incorrect");
+                }
+
+                
             }).catch((error) =>{
-                console.log(error);
+                console.log("erreur: ",error);
             });
     }
 

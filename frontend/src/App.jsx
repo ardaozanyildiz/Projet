@@ -13,13 +13,13 @@ import QuizMath from "./pages/QuizMath";
 import QuizFr from "./pages/QuizFr";
 import QuizCapital from "./pages/QuizCapital";
 import PageIntroduction from "./pages/PageIntroduction";
-
-
-
+import Profil from "./pages/Profil";
+import { UserProvider } from "./context/UserContext";
 
 function App() {  
   return (
     <BrowserRouter>
+      <UserProvider>
       <Navbar2/>
       <div>
         <Routes>
@@ -33,13 +33,13 @@ function App() {
             <Route path='/QuizFr' element={<QuizFr/>} />
             <Route path='/QuizCapital' element={<QuizCapital/>} />
             <Route path='/PageIntroduction' element={<PageIntroduction/>}/>
+            <Route path='/Profil' element={<Profil/>} />
             <Route path='*' element={<NotFound/>} />
-
         </Routes>
       </div>
       <Footer/>
+      </UserProvider>
     </BrowserRouter>
-     
   );
 }
 

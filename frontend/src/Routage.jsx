@@ -1,21 +1,22 @@
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HomePages from './pages/HomePages';
 import SearchArtist from './pages/SearchArtist';
 import Jeux from './pages/Jeux';
 import Contact from './pages/Contact';
+import Profil from './pages/Profil';
+import NotFound from './pages/NotFound';
 
 function Routage(props) {
     return (
         <BrowserRouter>
             <Routes>
-                
-            <Route path='/' element={<HomePages/>} />
-            <Route path='/SearchArtist' element={<SearchArtist/>} />
-            <Route path='/Jeux' element={<Jeux/>} />
-            <Route path='/Contact' element={<Contact/>} />
-            <Route path='*' element={<NotFound/>} />
-
+                <Route path='/' element={<HomePages/>} />
+                <Route path='/SearchArtist' element={<SearchArtist/>} />
+                <Route path='/Jeux' element={<Jeux/>} />
+                <Route path='/Contact' element={<Contact/>} />
+                <Route path='/Profil' element={<Profil/>} />
+                <Route path='*' element={<NotFound/>} />
             </Routes>
         </BrowserRouter>
     );
