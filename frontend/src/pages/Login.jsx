@@ -29,21 +29,21 @@ function Login(props) {
 
     }
     return (
-        <form class="form" onSubmit={(e) => submitClient(e)} method="post">
-            <p class="title">Inscription</p>
-            <p class="message">Inscris toi maintenant</p>
+        <form classNameName="form" onSubmit={(e) => submitClient(e)} method="post">
+            <p className="title">Inscription</p>
+            <p className="message">Inscris toi maintenant</p>
                     
             <label>
-                <input type="text"  class="input" name="email" id="email" placeholder="" required pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}" onChange={(e) => setAttribut(e)} value={client.email}/>
+                <input type="text"  className="input" name="email" id="email" placeholder="" required pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}" onChange={(e) => setAttribut(e)} value={client.email}/>
                 <span>Email</span>
             </label> 
                 
             <label>
-                <input type="text"  class="input" name="mdp" id="mdp" placeholder="" required onChange={(e) => setAttribut(e)} value={client.mdp}/>
+                <input type="text"  className="input" name="mdp" id="mdp" placeholder="" required onChange={(e) => setAttribut(e)} value={client.mdp}/>
                 <span>Mots de passe</span>
             </label>
-            <button type="submit" class="submit">Submit</button>
-            <p class="signin">Si tu as déjà un compte? <a><Link to="/Signin">Connecte toi</Link></a></p>
+            <button type="submit" className="submit">Submit</button>
+            <p className="signin">Si tu as déjà un compte? <a><Link to="/Signin">Connecte toi</Link></a></p>
         </form>
     );
 }

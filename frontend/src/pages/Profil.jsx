@@ -66,7 +66,7 @@ const Profil = () => {
                   color: '#007bff', 
                   textAlign: 'center' 
                 }}>
-                  {userData.meilleurScore} points
+                  {/*userData.meilleurScore*/} points
                 </div>
               </div>
             </div>
@@ -87,7 +87,7 @@ const Profil = () => {
                   </button>
                 </div>
                 <div className="list-group">
-                  {userData.quizzCrees.map((quizz, index) => (
+                  {/*userData.quizzCrees.map((quizz, index) => (
                     <div 
                       key={index} 
                       className="list-group-item d-flex justify-content-between align-items-center p-3"
@@ -103,7 +103,7 @@ const Profil = () => {
                       <span style={{ fontWeight: '500' }}>{quizz.nom}</span>
                       <i className="fas fa-chevron-right text-muted"></i>
                     </div>
-                  ))}
+                  ))*/}
                 </div>
               </div>
             </div>
@@ -123,7 +123,7 @@ const Profil = () => {
                 Derniers Quizz Complétés
               </h3>
               <div className="list-group">
-                {userData.quizzCompletes.map((quizz, index) => (
+                {/*userData.quizzCompletes.map((quizz, index) => (
                   <div 
                     key={index} 
                     className="list-group-item d-flex justify-content-between align-items-center p-3"
@@ -144,7 +144,7 @@ const Profil = () => {
                       {quizz.score} points
                     </span>
                   </div>
-                ))}
+                ))*/}
               </div>
             </div>
           </div>
