@@ -2,12 +2,42 @@ import React from 'react';
 import '../App.css';
 import { UserContext } from '../context/UserContext';
 import { useContext } from 'react';
+import { useState } from 'react';
+import { useEffect } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
+import axios from 'axios';
 
-const Profil = () => {
-    const { user } = useContext(UserContext);
-  // Données statiques pour l'exemple
+
+
+function Profil  ()  {
+
+
+  const[lstQuestions, setLstQuestions] = useState([])
+
+
+
+  const { user } = useContext(UserContext);
+  
   const userData = user;
+
+
+  const loadAllQuestions = async () => {
+    try {
+      const result = await axios.get(`http://localhost:8888/questions/getQuestionsByClient/${user.email}`);
+      console.log(result.data);
+      setLstQuestions(result.data);
+    } catch (error) {
+      console.error("Erreur lors du chargement des questions :", error);
+    }
+  };
+  
+  useEffect(() => {
+    loadAllQuestions();
+  }, []);
+
   return (
+
+    
     <div className="container-fluid container-lg py-4">
       <div className="row g-4">
         {/* Colonne de gauche */}
@@ -66,7 +96,7 @@ const Profil = () => {
                   color: '#007bff', 
                   textAlign: 'center' 
                 }}>
-                  {/*userData.meilleurScore*/} points
+                  {userData.highscore} points
                 </div>
               </div>
             </div>
@@ -82,12 +112,14 @@ const Profil = () => {
                   <h3 style={{ fontSize: 'clamp(1.1rem, 3vw, 1.3rem)', fontWeight: '600', margin: 0 }}>
                     Mes Quizz Créés
                   </h3>
-                  <button className="btn btn-primary btn-sm">
+                  
+                  <Link to="/FormQuizz"><button className="btn btn-primary btn-sm" >
                     + Créer un quizz
                   </button>
+                  </Link>
                 </div>
                 <div className="list-group">
-                  {/*userData.quizzCrees.map((quizz, index) => (
+                  {lstQuestions.map((quizz, index) => (
                     <div 
                       key={index} 
                       className="list-group-item d-flex justify-content-between align-items-center p-3"
@@ -100,10 +132,10 @@ const Profil = () => {
                         cursor: 'pointer'
                       }}
                     >
-                      <span style={{ fontWeight: '500' }}>{quizz.nom}</span>
+                      <span style={{ fontWeight: '500' }}>{quizz.category}</span>
                       <i className="fas fa-chevron-right text-muted"></i>
                     </div>
-                  ))*/}
+                  ))}
                 </div>
               </div>
             </div>

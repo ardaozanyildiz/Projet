@@ -14,6 +14,7 @@ import QuizFr from "./pages/QuizFr";
 import QuizCapital from "./pages/QuizCapital";
 import PageIntroduction from "./pages/PageIntroduction";
 import Profil from "./pages/Profil";
+import FormQuizz from "./pages/FormQuizz"
 import { UserProvider } from "./context/UserContext";
 
 function App() {  
@@ -34,6 +35,7 @@ function App() {
             <Route path='/QuizCapital' element={<QuizCapital/>} />
             <Route path='/PageIntroduction' element={<PageIntroduction/>}/>
             <Route path='/Profil' element={<Profil/>} />
+            <Route path='/FormQuizz' element={<FormQuizz/>} />
             <Route path='*' element={<NotFound/>} />
         </Routes>
       </div>
