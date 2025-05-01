@@ -1,0 +1,375 @@
+/* ===========================================================
+   Global Styles
+   =========================================================== */
+
+/* Corps de la page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    height: 100vh;
+}
+
+/* Conteneur principal */
+.container {
+    width: 40%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Disposition des sections en une ligne */
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Style générique des paragraphes */
+p {
+    font-size: 16px;
+    color: #333;
+    margin-top: 20px;
+    line-height: 1.6;
+}
+
+/* ===========================================================
+   About Section
+   =========================================================== */
+
+.about-col-1 {
+    flex: 1;
+    max-width: 45%;
+}
+
+.about-col-1 img {
+    width: 15em;
+    margin-left: 7em;
+    height: auto;
+    border-radius: 10px;
+}
+
+.about-col-1 + .about-col-1 {
+    flex: 1;
+    padding-left: 10px;
+}
+
+.sub-title {
+    font-size: 24px;
+    color: #feba29;
+    margin-bottom: 10px;
+}
+
+/* ===========================================================
+   Navbar
+   =========================================================== */
+
+#logo {
+    max-width: 165px;
+}
+
+.navbar-nav .nav-link {
+    color: #62b6cb;
+    font-size: 21px;
+    margin-right: 30px;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link a:hover {
+    color: #1b4965;
+}
+
+.navbar-nav .nav-link a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ===========================================================
+   Message & Card Components (Uiverse.io by alexruix)
+   =========================================================== */
+
+.message-container {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 15%;
+    height: 450px;
+    margin-top: 130px;
+}
+
+.card {
+    width: 300px;
+    background: #f5f5f5;
+    position: relative;
+    padding: 1rem;
+    border: 3px solid #c3c6ce;
+    transition: 0.5s ease-out;
+    overflow: visible;
+}
+
+.card-details {
+    color: black;
+    height: 100%;
+    gap: .5em;
+    display: grid;
+    place-content: center;
+}
+
+.card-button {
+    transform: translate(-50%, 125%);
+    width: 50%;
+    border-radius: 9rem;
+    border: 1px solid #000;
+    background-color: #008bf8;
+    color: #fff;
+    font-size: 1rem;
+    padding: .5rem 1rem;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    opacity: 0;
+    transition: 0.3s ease-out;
+}
+
+.text-title {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.card:hover {
+    border-color: #000;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
+}
+
+.card:hover .card-button {
+    transform: translate(-50%, 50%);
+    opacity: 1;
+}
+
+/* ===========================================================
+   Form Component
+   =========================================================== */
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 350px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    position: relative;
+    margin: 160px auto 0;
+}
+
+.title {
+    font-size: 28px;
+    color: royalblue;
+    font-weight: 600;
+    letter-spacing: -1px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+}
+
+.title::before,
+.title::after {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    left: 0;
+    background-color: royalblue;
+}
+
+.title::before {
+    width: 18px;
+    height: 18px;
+}
+
+.title::after {
+    width: 18px;
+    height: 18px;
+    animation: pulse 1s linear infinite;
+}
+
+.message, .signin {
+    color: rgba(88, 87, 87, 0.82);
+    font-size: 14px;
+}
+
+.signin {
+    text-align: center;
+}
+
+.signin a {
+    color: royalblue;
+}
+
+.signin a:hover {
+    text-decoration: underline royalblue;
+}
+
+.flex {
+    display: flex;
+    gap: 6px;
+}
+
+.form label {
+    position: relative;
+}
+
+.form label .input {
+    width: 100%;
+    padding: 10px 10px 20px;
+    border: 1px solid rgba(105,105,105,0.4);
+    border-radius: 10px;
+}
+
+.form label .input:placeholder-shown + span {
+    top: 15px;
+    font-size: 0.9em;
+}
+
+.form label .input:focus + span,
+.form label .input:not(:placeholder-shown) + span {
+    top: 30px;
+    font-size: 0.7em;
+    font-weight: 600;
+}
+
+.submit {
+    border: none;
+    background-color: royalblue;
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.submit:hover {
+    background-color: rgb(56, 90, 194);
+}
+
+@keyframes pulse {
+    from { transform: scale(0.9); opacity: 1; }
+    to   { transform: scale(1.8); opacity: 0; }
+}
+
+/* ===========================================================
+   Custom Radio Component (Uiverse.io by kyle1dev)
+   =========================================================== */
+
+.custom-radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 320px;
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    margin: 0 auto;
+}
+
+.custom-radio-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 12px 20px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    font-size: 16px;
+    color: #333;
+    user-select: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.custom-radio-container:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: scale(1.03);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.custom-radio-container input[type="radio"] {
+    opacity: 0;
+    position: absolute;
+}
+
+.custom-radio-checkmark {
+    position: relative;
+    height: 24px;
+    width: 24px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.3);
+    transition: background-color 0.4s ease, transform 0.4s ease;
+    margin-right: 12px;
+    display: inline-block;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.custom-radio-container input[type="radio"]:checked + .custom-radio-checkmark {
+    background-color: #fff;
+    border-color: #007bff;
+    box-shadow: 0 0 0 8px rgba(0, 123, 255, 0.2);
+    transform: scale(1.2);
+    animation: pulse-radio 0.6s forwards;
+}
+
+.custom-radio-checkmark::after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.custom-radio-container input[type="radio"]:checked + .custom-radio-checkmark::after {
+    display: block;
+    left: 50%;
+    top: 50%;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #007bff;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes pulse-radio {
+    0% { transform: scale(1.2); }
+    50% { transform: scale(1.4); }
+    100% { transform: scale(1.2); }
+}
+
+/* ===========================================================
+   Footer
+   =========================================================== */
+
+/* Footer fixé en bas */
+.copyright {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #1b4965;
+    color: #bee9e8;
+    text-align: center;
+    padding: 10px 0;
+    z-index: 100;
+    font-family: Arial, sans-serif;
+}
+
+/* Texte du footer */
+.copyright p {
+    margin: 0;
+    font-size: 1rem;
+}

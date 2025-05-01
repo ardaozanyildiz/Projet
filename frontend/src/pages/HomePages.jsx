@@ -1,5 +1,5 @@
 import React from 'react';
-import './HomePages.css';
+import '../style/Home.css';
 import {Link} from 'react-router-dom';
 
 
@@ -14,7 +14,6 @@ function HomePages(props) {
                 <div className="card" style={{ borderRadius: "20px", backgroundImage: "url('./src/image/Math.png')", backgroundSize:"cover"}}>
                     <div className="card-details">
                         <p className="text-title">Quiz de Math</p>
-                        <p className="text-body">- 10 questions <br /> - 10 secondes par questions</p>
                     </div>
                     <Link to="/QuizMath"><button className="card-button" style={{background:"#5dc75f"}}><a>Jouer</a></button></Link>
                 </div>
@@ -22,7 +21,6 @@ function HomePages(props) {
                 <div className="card" style={{ borderRadius: "20px", backgroundImage: "url('./src/image/Francais.png')", backgroundSize:"cover"}}>
                 <div className="card-details">
                         <p className="text-title">Quiz Francais</p>
-                        <p className="text-body">- 10 questions <br /> - 10 secondes par questions</p>
                     </div>
                     <Link to="/QuizFr"><button className="card-button" style={{background:"#dbba76"}}><a>Jouer</a></button></Link>
                 </div>
@@ -30,7 +28,6 @@ function HomePages(props) {
                 <div className="card" style={{ borderRadius: "20px", backgroundImage: "url('./src/image/Capitale.png')", backgroundSize:"cover"}}>
                     <div className="card-details">
                         <p className="text-title">Quiz Capital</p>
-                        <p className="text-body">- 10 questions <br /> - regarder l'image est deviner la capital <br /> - 10 secondes par questions</p>
                     </div>
                     <Link to="/PageIntroduction"><button className="card-button" style={{background:"#e67d2e"}}><a>Jouer</a></button></Link>
                 </div>

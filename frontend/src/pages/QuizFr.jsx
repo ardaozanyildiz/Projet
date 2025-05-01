@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import './QuizFr.css';
+import '../style/Quizz.css';
 import axios from 'axios';
+import {Link} from 'react-router-dom';
 
 function QuizFr() {
   const [tabQuestions, setQuestions] = useState([]);
@@ -42,6 +43,8 @@ function QuizFr() {
         <h2 style={{ textAlign: "center", marginTop: "10%" }}>Quiz terminé !</h2>
         <p style={{ textAlign: "center" }}>Merci pour ta participation</p>
         <p style={{ textAlign: "center" }}>Score final : {counter} / {tabQuestions.length}</p> 
+        <Link to="/Resultat"><button className="bouton" style={{background:"blue", color:"white", marginLeft:"44%"}}><a>Voir les résultats de votre quiz</a></button></Link>
+
       </div>
     );
   }

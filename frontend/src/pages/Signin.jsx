@@ -3,6 +3,9 @@ import {Link, useNavigate} from 'react-router-dom';
 import axios from 'axios';
 import { UserContext } from '../context/UserContext';
 import { useContext } from 'react';
+//import './Forms.css';
+import '../style/Home.css';
+
 
 function Signin(props) {
 
@@ -40,21 +43,21 @@ function Signin(props) {
 
     return (
         <div className='tout'>
-            <form class="form" onSubmit={(e) => checkClient(e)} method='post'>
+            <form className="form" onSubmit={(e) => checkClient(e)} method='post'>
                 <p className="title">Connexion</p>
                 <p className="message">Connecte toi</p>
         
                 <label>
-                <input required placeholder="" type="text" className="input" name="email" id="email" require pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}" onChange={(e) => setAttribut(e)} value={client.email} />
-                <span>Email</span>
-            </label> 
+                    <input type="text"  className="input" name="email" id="email" placeholder="" required pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}" onChange={(e) => setAttribut(e)} value={client.email} />
+                    <span>Email</span>
+                </label> 
                 
                     
                 <label>
-                    <input required placeholder="" type="password" className="input" name="mdp" require onChange={(e) => setAttribut(e)} value={client.mdp} />
+                    <input type="text"  className="input" name="mdp" id="mdp" placeholder="" required onChange={(e) => setAttribut(e)} value={client.mdp} />
                     <span>Mots de passe</span>
                 </label>
-                <button className="submit">Submit</button>
+                <button type="submit" className="submit">Submit</button>
                 <p className="signin">Si tu as pas de compte? <a><Link to="/Login">Inscris toi</Link></a></p>
             </form>
         </div>

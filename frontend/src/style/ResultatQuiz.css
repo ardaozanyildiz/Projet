@@ -1,0 +1,35 @@
+/* Conteneur principal */
+.resultat-card {
+    width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    font-family: Arial, sans-serif;
+}
+
+/* Tableau */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+/* En-tête */
+th {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: left;
+}
+
+/* Cellules */
+td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Ligne hover */
+tr:hover {
+    background-color: #f1f1f1;
+}

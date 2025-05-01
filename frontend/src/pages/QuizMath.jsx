@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import './QuizMath.css';
+import '../style/Quizz.css';
 
 function QuizMath() {
   const [tabQuestions, setQuestions] = useState([]);

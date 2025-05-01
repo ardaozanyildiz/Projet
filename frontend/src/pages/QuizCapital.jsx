@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import {Link} from 'react-router-dom';
+
 
 function QuizCapital() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -38,6 +40,7 @@ function QuizCapital() {
         <div className='container'>
             <h2>quizz terminé !</h2>
             <p>Merci pour ta participation</p>
+            <Link to="/Resultat"><button className="bouton" style={{background:"blue", color:"white", marginLeft:"43%"}}><a>Voir les résultats de votre quiz</a></button></Link>
         </div>
     );
   }

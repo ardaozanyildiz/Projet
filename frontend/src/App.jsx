@@ -4,10 +4,10 @@ import Navbar2 from "./header/Navbar2";
 import Footer from "./header/Footer";
 import HomePages from "./pages/HomePages";
 import SearchArtist from "./pages/SearchArtist";
-import Contact from "./pages/Contact";
+import Contact from "./pages/About";
 import NotFound from "./pages/NotFound";
 import TutoJeux from "./pages/TutoJeux";
-import Login from "./pages/Login";
+import Login from "./pages/Inscription";
 import Signin from "./pages/Signin";
 import QuizMath from "./pages/QuizMath";
 import QuizFr from "./pages/QuizFr";
@@ -15,6 +15,7 @@ import QuizCapital from "./pages/QuizCapital";
 import PageIntroduction from "./pages/PageIntroduction";
 import Profil from "./pages/Profil";
 import FormQuizz from "./pages/FormQuizz"
+import Resultat from "./pages/Resultat";
 import { UserProvider } from "./context/UserContext";
 
 function App() {  
@@ -36,6 +37,7 @@ function App() {
             <Route path='/PageIntroduction' element={<PageIntroduction/>}/>
             <Route path='/Profil' element={<Profil/>} />
             <Route path='/FormQuizz' element={<FormQuizz/>} />
+            <Route path='/Resultat' element={<Resultat/>} />
             <Route path='*' element={<NotFound/>} />
         </Routes>
       </div>

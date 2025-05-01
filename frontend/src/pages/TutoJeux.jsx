@@ -1,5 +1,5 @@
 import React from 'react';
-import './TutoJeux.css';
+import '../style/TutoJeux.css';
 import {Link} from 'react-router-dom';
 
 
@@ -18,11 +18,11 @@ function TuToJeux(props) {
                     </li>
                     <li>
                         Chaque question contient 4 choix de reponses 
-                        ON VA RAJOUTER IMG ICI
+                        
                     </li>
                     <li>
                         Choisi la bonne reponse
-                        ON VA RAJOUTER IMG ICI
+                        
                     </li>
                     <li>
                         Dans chaque quiz vous pouvz utiliser des indices
@@ -33,11 +33,11 @@ function TuToJeux(props) {
                     </li>    
                     <li>
                         Clique sur cette icon ... pour avoir les indices normales
-                        ON VA RAJOUTER IMG ICI
+                        
                     </li>
                     <li>
                         Clique sur cette icon pour eliminer 2 mauvaises reponses
-                        ON VA RAJOUTER IMG ICI
+                        
                     </li>
                     <li>
                         Le chronometre vas commencer des que vous lancez la partie

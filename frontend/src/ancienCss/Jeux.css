@@ -1,0 +1,81 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    
+  }
+   
+  .up {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5em;
+  }
+   
+  .down {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5em;
+  }
+   
+  .card1, .card2, .card3, .card4 {
+    width: 90px;
+    height: 90px;
+    outline: none;
+    border: none;
+    background: white;
+    border-radius: 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 14px;
+    transition: .2s ease-in-out;
+    
+  }
+   
+  .card1 {
+    border-radius: 90px 5px 5px 5px;
+    background-color: #cc39a4;
+    color: white;
+  }
+   
+  .card2 {
+    border-radius: 5px 90px 5px 5px;
+    background-color: #03A9F4;
+    color: white;
+  }
+   
+  .card3 {
+    border-radius: 5px 5px 5px 90px;
+    background-color: black;
+    color: white;
+  }
+   
+  .card4 {
+    border-radius: 5px 5px 90px 5px;
+    background-color: #8c9eff;
+    color: white;
+  }
+   
+  .card1:hover, .card2:hover, .card3:hover, .card4:hover {
+    cursor: pointer;
+    scale: 1.1;
+    color: #fff;
+  }
+   
+  .card1:hover {
+    background-color: #cc39a4;
+  }
+   
+  .card2:hover {
+    background-color: #03A9F4;
+  }
+   
+  .card3:hover {
+    background-color: black;
+  }
+   
+  .card4:hover {
+    background-color: #8c9eff;
+  }
