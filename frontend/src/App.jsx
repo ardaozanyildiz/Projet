@@ -1,9 +1,10 @@
+//Arda
+
 import React from "react";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar2 from "./header/Navbar2";
 import Footer from "./header/Footer";
 import HomePages from "./pages/HomePages";
-import SearchArtist from "./pages/SearchArtist";
 import Contact from "./pages/About";
 import NotFound from "./pages/NotFound";
 import TutoJeux from "./pages/TutoJeux";
@@ -14,8 +15,7 @@ import QuizFr from "./pages/QuizFr";
 import QuizCapital from "./pages/QuizCapital";
 import PageIntroduction from "./pages/PageIntroduction";
 import Profil from "./pages/Profil";
-import FormQuizz from "./pages/FormQuizz"
-
+import FormQuizz from "./pages/FormQuizz";
 import Resultat from "./pages/Resultat";
 import { UserProvider } from "./context/UserContext";
 
@@ -27,7 +27,6 @@ function App() {
       <div>
         <Routes>
             <Route path='/' element={<HomePages/>} />
-            <Route path='/SearchArtist' element={<SearchArtist/>} />
             <Route path='/Contact' element={<Contact/>} />
             <Route path='/TutoJeux' element={<TutoJeux/>} />
             <Route path='/Login' element={<Login/>} />

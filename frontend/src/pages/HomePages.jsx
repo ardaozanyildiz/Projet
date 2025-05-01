@@ -1,3 +1,5 @@
+//Arda
+
 import React from 'react';
 import '../style/Home.css';
 import {Link} from 'react-router-dom';
@@ -31,10 +33,6 @@ function HomePages(props) {
                     </div>
                     <Link to="/PageIntroduction"><button className="card-button" style={{background:"#e67d2e"}}><a>Jouer</a></button></Link>
                 </div>
-
-                
-            
-                    
             </div>
         </div>
        

@@ -1,8 +1,9 @@
+//Arda
+
 import React from 'react';
-//import './footer.css';
 import '../style/Home.css';
 
-//Arda
+
 function Footer() {
     return (
         <div class="copyright fixed-bottom" >

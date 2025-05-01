@@ -1,12 +1,13 @@
+//Arda
+
 import React from 'react';
-//import './navbar.css';
 import '../style/Home.css';
 import {Link} from 'react-router-dom';
 
 
 
 
-//Arda
+
 function Navbar2() {
     return (
         <nav className="navbar navbar-expand-lg" style={{fontFamily:"league spartan", background:"white"}}>

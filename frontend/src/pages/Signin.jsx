@@ -1,9 +1,10 @@
+//Arda
+
 import React, { useState } from 'react';
 import {Link, useNavigate} from 'react-router-dom';
 import axios from 'axios';
 import { UserContext } from '../context/UserContext';
 import { useContext } from 'react';
-//import './Forms.css';
 import '../style/Home.css';
 
 
@@ -51,8 +52,6 @@ function Signin(props) {
                     <input type="text"  className="input" name="email" id="email" placeholder="" required pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}" onChange={(e) => setAttribut(e)} value={client.email} />
                     <span>Email</span>
                 </label> 
-                
-                    
                 <label>
                     <input type="text"  className="input" name="mdp" id="mdp" placeholder="" required onChange={(e) => setAttribut(e)} value={client.mdp} />
                     <span>Mots de passe</span>

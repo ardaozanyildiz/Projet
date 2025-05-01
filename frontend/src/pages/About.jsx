@@ -1,7 +1,8 @@
+//Arda
+
 import React from 'react';
 
 
-//Arda
 function Contact(props) {
     return (
         <div id="about" >

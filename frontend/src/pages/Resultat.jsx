@@ -1,6 +1,9 @@
+//Arda
+
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import '../style/ResultatQuiz.css';
+import {Link} from 'react-router-dom'
 
 
 function Resultat() {
@@ -30,12 +33,16 @@ function Resultat() {
                             <tr key={data.i}>
                                     <td>{data.questionTxt}</td>
                                     <td>{data.bonneReponse}</td>
+                                    
                             </tr>
+                            
+                            
                         
                         ))
                     }
                 </tbody>
             </table>
+            <Link to="/"><button className="bouton" style={{background:"blue", color:"white", marginLeft:"40%"}}><a>Retouner à l'accueil</a></button></Link>
             
         </div>
     );

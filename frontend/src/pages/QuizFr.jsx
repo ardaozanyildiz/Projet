@@ -1,3 +1,5 @@
+//Arda et Hamza
+
 import React, { useEffect, useState } from 'react';
 import '../style/Quizz.css';
 import axios from 'axios';
@@ -84,6 +86,7 @@ function QuizFr() {
           <button className="btn btn-primary" onClick={handleNext}>
             Suivant
           </button>
+          
         </div>
       </div>
     )

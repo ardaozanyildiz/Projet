@@ -1,5 +1,6 @@
+//Arda
+
 import React from 'react';
-//import './Forms.css';
 import '../style/Forms.css';
 import {Link} from 'react-router-dom';
 import  {useState} from 'react'
@@ -7,7 +8,7 @@ import {useNavigate} from "react-router-dom";
 import axios from "axios";
 
 
-function Login(props) {
+function Login() {
     const[client, setClient] = useState({
         email:"",
         mdp:""
