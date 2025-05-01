@@ -15,6 +15,7 @@ import QuizCapital from "./pages/QuizCapital";
 import PageIntroduction from "./pages/PageIntroduction";
 import Profil from "./pages/Profil";
 import FormQuizz from "./pages/FormQuizz"
+
 import Resultat from "./pages/Resultat";
 import { UserProvider } from "./context/UserContext";
 

@@ -1,0 +1,38 @@
+.card {
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: center;  /* Centrer le texte */
+    border: 1px solid #ddd;  /* Bordure grise claire */
+    border-radius: 4px;  /* Coins arrondis */
+}
+
+th {
+    background-color: #f4f4f4;
+    color: #333;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;  /* Lignes paires avec un fond légèrement gris */
+}
+
+tr:hover {
+    background-color: #f1f1f1;  /* Survol des lignes avec une couleur plus claire */
+}
+
+.card table {
+    width: 100%;
+    overflow-x: auto;
+}
