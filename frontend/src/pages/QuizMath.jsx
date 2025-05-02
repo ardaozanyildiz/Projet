@@ -1,14 +1,16 @@
 //Hamza
 
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import '../style/Quizz.css';
+import axios from 'axios';
+import {Link} from 'react-router-dom';
 
 function QuizMath() {
   const [tabQuestions, setQuestions] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+  const [counter, setCounter] = useState(0)
 
   const loadAllQuestions = async () => {
     try {
@@ -29,6 +31,10 @@ function QuizMath() {
       return;
     }
     setErrorMessage('');
+
+    if(selectedAnswer === tabQuestions[currentQuestionIndex].bonneReponse){
+      setCounter(counter + 1)
+    }
     setCurrentQuestionIndex(currentQuestionIndex + 1);
     setSelectedAnswer('');
   };
@@ -38,6 +44,9 @@ function QuizMath() {
       <div className='quiz'>
         <h2 style={{ textAlign: "center", marginTop: "10%" }}>Quiz terminé !</h2>
         <p style={{ textAlign: "center" }}>Merci pour ta participation</p>
+        <p style={{ textAlign: "center" }}>Score final : {counter} / {tabQuestions.length}</p> 
+        <Link to="/Resultat"><button className="bouton" style={{background:"blue", color:"white", marginLeft:"44%"}}><a>Voir les résultats de votre quiz</a></button></Link>
+
       </div>
     );
   }
@@ -45,7 +54,7 @@ function QuizMath() {
   return (
     tabQuestions.length > 0 && (
       <div className='quiz'>
-        <h1 style={{ textAlign: "center", marginTop: "10%" }}>Mathématiques</h1>
+        <h1 style={{ textAlign: "center", marginTop: "10%" }}>Audio bouton</h1>
         <p style={{ textAlign: "center" }}>{tabQuestions[currentQuestionIndex].questionTxt}</p>
 
         <div className="custom-radio-group">
@@ -77,6 +86,7 @@ function QuizMath() {
           <button className="btn btn-primary" onClick={handleNext}>
             Suivant
           </button>
+          
         </div>
       </div>
     )

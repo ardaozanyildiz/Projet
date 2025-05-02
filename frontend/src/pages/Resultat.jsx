@@ -34,10 +34,7 @@ function Resultat() {
                                     <td>{data.questionTxt}</td>
                                     <td>{data.bonneReponse}</td>
                                     
-                            </tr>
-                            
-                            
-                        
+                            </tr>                 
                         ))
                     }
                 </tbody>

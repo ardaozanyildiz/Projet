@@ -1,4 +1,4 @@
-//Arda et Hamza
+//Hamza
 
 import React, { useEffect, useState } from 'react';
 import '../style/Quizz.css';
