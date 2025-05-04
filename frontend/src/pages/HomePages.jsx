@@ -33,6 +33,13 @@ function HomePages(props) {
                     </div>
                     <Link to="/PageIntroduction"><button className="card-button" style={{background:"#e67d2e"}}><a>Jouer</a></button></Link>
                 </div>
+
+                <div className="card" style={{ borderRadius: "20px", backgroundImage: "url('./src/image/User.png')", backgroundSize:"cover"}}>
+                    <div className="card-details">
+                        <p className="text-title">Quiz Utilisateur</p>
+                    </div>
+                    <Link to="/QuizUtilisateur"><button className="card-button" style={{background:"#8bd7e8"}}><a>Jouer</a></button></Link>
+                </div>
             </div>
         </div>
        

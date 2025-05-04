@@ -13,9 +13,11 @@ import Signin from "./pages/Signin";
 import QuizMath from "./pages/QuizMath";
 import QuizFr from "./pages/QuizFr";
 import QuizCapital from "./pages/QuizCapital";
+import QuizUtilisateur from "./pages/QuizUtilisateur";
 import PageIntroduction from "./pages/PageIntroduction";
 import Profil from "./pages/Profil";
 import FormQuizz from "./pages/FormQuizz";
+import CreeQuiz from "./pages/CreeQuiz";
 import Resultat from "./pages/Resultat";
 import { UserProvider } from "./context/UserContext";
 
@@ -34,9 +36,11 @@ function App() {
             <Route path='/QuizMath' element={<QuizMath/>} />
             <Route path='/QuizFr' element={<QuizFr/>} />
             <Route path='/QuizCapital' element={<QuizCapital/>} />
+            <Route path='/QuizUtilisateur' element={<QuizUtilisateur/>} />
             <Route path='/PageIntroduction' element={<PageIntroduction/>}/>
             <Route path='/Profil' element={<Profil/>} />
             <Route path='/FormQuizz' element={<FormQuizz/>} />
+            <Route path='/CreeQuiz' element={<CreeQuiz/>} />
             <Route path='/Resultat' element={<Resultat/>} />
             <Route path='*' element={<NotFound/>} />
         </Routes>

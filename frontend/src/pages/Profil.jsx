@@ -115,7 +115,7 @@ function Profil  ()  {
                     Mes Quizz Créés
                   </h3>
                   
-                  <Link to="/FormQuizz"><button className="btn btn-primary btn-sm" >
+                  <Link to="/CreeQuiz"><button className="btn btn-primary btn-sm" >
                     + Créer un quizz
                   </button>
                   </Link>
