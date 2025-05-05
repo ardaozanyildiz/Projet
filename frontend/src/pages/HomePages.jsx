@@ -9,7 +9,7 @@ function HomePages(props) {
     return (
         <div className="centre">
             <div className="message-container">
-                <h1>Profitez de nos 3 petits Quiz</h1>
+                <h1>Salut ! Prêt à tester tes connaissances ? Lance un quiz et amuse-toi !</h1>
             </div>
 
             <div className="card-container">

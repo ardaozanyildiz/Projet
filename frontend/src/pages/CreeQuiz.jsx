@@ -1,3 +1,4 @@
+//Arda
 import React from 'react';
 
 import {Link} from 'react-router-dom';
@@ -39,10 +40,10 @@ function CreeQuiz(props) {
 
         <form className="form" onSubmit={(e) => submitQuestion(e)} method="post">
             <p className="title">Cree ton quiz</p>
-            <p className="message">Inscris toi maintenant</p>
+            
                     
             <label>
-                <input type="text"  className="input" name="questionTxt" id="questionTxt" placeholder="" required onChange={(e) => setAttribut(e)} value={question.question_txt}/>
+                <input type="text"  className="input" name="questionTxt" id="questionTxt" placeholder="" required onChange={(e) => setAttribut(e)} value={question.questionTxt}/>
                 <span>Question</span>
             </label> 
                 
@@ -62,7 +63,7 @@ function CreeQuiz(props) {
             </label>
 
             <label>
-                <input type="text"  className="input" name="bonneReponse" id="bonneReponse" placeholder="" required onChange={(e) => setAttribut(e)} value={question.bonne_reponse}/>
+                <input type="text"  className="input" name="bonneReponse" id="bonneReponse" placeholder="" required onChange={(e) => setAttribut(e)} value={question.bonneReponse}/>
                 <span>Choix 4 qui sera la bonne réponse</span>
             </label>
 

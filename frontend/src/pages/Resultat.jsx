@@ -1,5 +1,5 @@
 //Arda
-
+import { useParams } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import '../style/ResultatQuiz.css';
@@ -7,16 +7,18 @@ import {Link} from 'react-router-dom'
 
 
 function Resultat() {
+    const { category } = useParams();
     const [Questions, setQuestions] = useState([]);
 
     const loadAllQuestions = async () => {
-        const result = await axios.get('http://localhost:8888/questions/arda/francais');
+        const result = await axios.get(`http://localhost:8888/questions/arda/${category}`);
+
         setQuestions(result.data);
     };
 
     useEffect(() =>{
         loadAllQuestions()
-    }, []);
+    }, [category]);
 
     return (
         <div className='resultat-card'>

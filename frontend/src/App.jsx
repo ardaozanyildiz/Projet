@@ -41,7 +41,7 @@ function App() {
             <Route path='/Profil' element={<Profil/>} />
             <Route path='/FormQuizz' element={<FormQuizz/>} />
             <Route path='/CreeQuiz' element={<CreeQuiz/>} />
-            <Route path='/Resultat' element={<Resultat/>} />
+            <Route path='/Resultat/:category' element={<Resultat />} />
             <Route path='*' element={<NotFound/>} />
         </Routes>
       </div>
