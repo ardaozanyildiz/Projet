@@ -119,6 +119,10 @@ function Profil  ()  {
                     + Créer un quizz
                   </button>
                   </Link>
+                  <Link to="/GestionQuiz"><button className="btn btn-primary btn-sm" >
+                    Gerer le quiz
+                  </button>
+                  </Link>
                 </div>
                 <div className="list-group">
                   {lstQuestions.map((quizz, index) => (
