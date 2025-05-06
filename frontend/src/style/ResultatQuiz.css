@@ -8,6 +8,15 @@
     font-family: Arial, sans-serif;
 }
 
+.gestion-card {
+    width: 1300px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    font-family: Arial, sans-serif;
+}
+
 
 /* Tableau */
 table {
