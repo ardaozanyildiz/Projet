@@ -1,17 +1,17 @@
-//Hamza
-
 import React, { useEffect, useState } from 'react';
 import '../style/Quizz.css';
 import axios from 'axios';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function QuizMath() {
   const [tabQuestions, setQuestions] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
-  const [counter, setCounter] = useState(0)
+  const [counter, setCounter] = useState(0);
+  const [melangerReponse, SetMelangerReponse] = useState([]);
 
+  
   const loadAllQuestions = async () => {
     try {
       const result = await axios.get('http://localhost:8888/questions/arda/math');
@@ -20,10 +20,25 @@ function QuizMath() {
       console.error("Erreur lors du chargement des questions :", error);
     }
   };
+//Arda------------
 
+  const melangerQuestion = () => {
+    if (tabQuestions.length > 0 && currentQuestionIndex < tabQuestions.length) {
+      const question = tabQuestions[currentQuestionIndex];
+      const melange = [question.choix1, question.choix2, question.choix3, question.bonneReponse]
+        .sort(() => Math.random() - 0.5); 
+        SetMelangerReponse(melange);
+    }
+  };
+
+//------------------
   useEffect(() => {
     loadAllQuestions();
   }, []);
+
+  useEffect(() => {
+    melangerQuestion();
+  }, [tabQuestions, currentQuestionIndex]);
 
   const handleNext = () => {
     if (selectedAnswer === '') {
@@ -32,9 +47,10 @@ function QuizMath() {
     }
     setErrorMessage('');
 
-    if(selectedAnswer === tabQuestions[currentQuestionIndex].bonneReponse){
-      setCounter(counter + 1)
+    if (selectedAnswer === tabQuestions[currentQuestionIndex].bonneReponse) {
+      setCounter(counter + 1);
     }
+
     setCurrentQuestionIndex(currentQuestionIndex + 1);
     setSelectedAnswer('');
   };
@@ -44,9 +60,9 @@ function QuizMath() {
       <div className='quiz'>
         <h2 style={{ textAlign: "center", marginTop: "10%" }}>Quiz terminé !</h2>
         <p style={{ textAlign: "center" }}>Merci pour ta participation</p>
-        <p style={{ textAlign: "center" }}>Score final : {counter} / {tabQuestions.length}</p> 
-        <Link to="/Resultat/math"><button className="bouton" style={{background:"blue", color:"white", marginLeft:"44%"}}><a>Voir les résultats de votre quiz</a></button></Link>
-
+        <p style={{ textAlign: "center" }}>Score final : {counter} / {tabQuestions.length}</p>
+        <Link to="/Resultat/math"><button className="bouton" style={{ background: "blue", color: "white", marginLeft: "44%" }}>Voir les résultats de votre quiz</button></Link>
+        <Link to="/" className="navbar-brand"><button className="bouton" style={{background:"blue", color:"white", marginLeft:"44%"}}>Retourner à l'accueil</button></Link>
       </div>
     );
   }
@@ -58,10 +74,7 @@ function QuizMath() {
         <p style={{ textAlign: "center" }}>{tabQuestions[currentQuestionIndex].questionTxt}</p>
 
         <div className="custom-radio-group">
-          {[tabQuestions[currentQuestionIndex].choix1,
-            tabQuestions[currentQuestionIndex].choix2,
-            tabQuestions[currentQuestionIndex].choix3,
-            tabQuestions[currentQuestionIndex].bonneReponse].map((choix, index) => (
+          {melangerReponse.map((choix, index) => (
             <label className="custom-radio-container" key={index}>
               <input
                 type="radio"
@@ -86,7 +99,6 @@ function QuizMath() {
           <button className="btn btn-primary" onClick={handleNext}>
             Suivant
           </button>
-          
         </div>
       </div>
     )

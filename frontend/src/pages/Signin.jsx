@@ -57,7 +57,7 @@ function Signin(props) {
                     <span>Mots de passe</span>
                 </label>
                 <button type="submit" className="submit">Submit</button>
-                <p className="signin">Si tu as pas de compte? <a><Link to="/Login">Inscris toi</Link></a></p>
+                <p className="signin">Si tu as pas de compte? <Link to="/Login">Inscris toi</Link></p>
             </form>
         </div>
     );

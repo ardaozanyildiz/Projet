@@ -41,7 +41,7 @@ function Resultat() {
                     }
                 </tbody>
             </table>
-            <Link to="/"><button className="bouton" style={{background:"blue", color:"white", marginLeft:"40%"}}><a>Retouner à l'accueil</a></button></Link>
+            <Link to="/"><button className="bouton" style={{background:"blue", color:"white", marginLeft:"40%"}}>Retouner à l'accueil</button></Link>
             
         </div>
     );

@@ -45,7 +45,7 @@ function QuizUtilisateur() {
         <h2 style={{ textAlign: "center", marginTop: "10%" }}>Quiz terminé !</h2>
         <p style={{ textAlign: "center" }}>Merci pour ta participation</p>
         <p style={{ textAlign: "center" }}>Score final : {counter} / {tabQuestions.length}</p> 
-        <Link to="/Resultat/utilisateur"><button className="bouton" style={{background:"blue", color:"white", marginLeft:"44%"}}><a>Voir les résultats de votre quiz</a></button></Link>
+        <Link to="/Resultat/utilisateur"><button className="bouton" style={{background:"blue", color:"white", marginLeft:"44%"}}>Voir les résultats de votre quiz</button></Link>
 
       </div>
     );

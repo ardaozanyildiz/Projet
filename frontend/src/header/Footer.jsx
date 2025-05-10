@@ -6,7 +6,7 @@ import '../style/Home.css';
 
 function Footer() {
     return (
-        <div class="copyright fixed-bottom" >
+        <div className="copyright fixed-bottom" >
             <p>&copy;Copyright 2025 Arda & Hamza </p>
         </div>
     );

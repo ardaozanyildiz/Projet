@@ -18,7 +18,7 @@ function Contact(props) {
                             cheminement scolaire. Comme vous pouvez le voir sur l'image à la gauche, je joue aussi au basket-ball. Ça fait 5 ans que je joue et j'adore ça.
                             Je fais ce site dans le but de develloper mon niveau en informatique .
                         </p>
-                        <a href="./src/image/cvArda.docx" download class="btn" style={{color:"#feba29"}}>Cliquez ici pour télécharger mon cv</a>
+                        <a href="./src/image/cvArda.docx" download className="btn" style={{color:"#feba29"}}>Cliquez ici pour télécharger mon cv</a>
     
                     </div>
                 </div>

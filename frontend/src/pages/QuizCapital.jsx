@@ -1,137 +1,108 @@
-//Hamza
 import React, { useEffect, useState } from 'react';
+import '../style/Quizz.css';
 import axios from 'axios';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-
-function QuizCapital() {
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+function QuizMath() {
   const [tabQuestions, setQuestions] = useState([]);
-  const [selectedAwnser, setSelectedAwnser] = useState("")
-  const [errorMessage, setErrorMessage] = useState("")
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [selectedAnswer, setSelectedAnswer] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+  const [counter, setCounter] = useState(0);
+  const [melangerReponse, SetMelangerReponse] = useState([]);
 
+  
   const loadAllQuestions = async () => {
     try {
-      console.log("1");
-      const result = await axios.get("http://localhost:8888/questions/arda/capitale");
+      const result = await axios.get('http://localhost:8888/questions/arda/capital');
       setQuestions(result.data);
     } catch (error) {
       console.error("Erreur lors du chargement des questions :", error);
     }
   };
+//Arda------------
 
+  const melangerQuestion = () => {
+    if (tabQuestions.length > 0 && currentQuestionIndex < tabQuestions.length) {
+      const question = tabQuestions[currentQuestionIndex];
+      const melange = [question.choix1, question.choix2, question.choix3, question.bonneReponse]
+        .sort(() => Math.random() - 0.5); 
+        SetMelangerReponse(melange);
+    }
+  };
+
+//------------------
   useEffect(() => {
     loadAllQuestions();
   }, []);
 
-  const handleNext = () => {
-    if (selectedAwnser === ""){
-        setErrorMessage("veuillez selectionner reponse avant de continuer")
-        return;
-    }
-    setErrorMessage("");
-    setCurrentQuestionIndex(currentQuestionIndex +1);
-    setSelectedAwnser("");
+  useEffect(() => {
+    melangerQuestion();
+  }, [tabQuestions, currentQuestionIndex]);
 
-    
+  const handleNext = () => {
+    if (selectedAnswer === '') {
+      setErrorMessage("⚠️ Veuillez sélectionner une réponse avant de continuer.");
+      return;
+    }
+    setErrorMessage('');
+
+    if (selectedAnswer === tabQuestions[currentQuestionIndex].bonneReponse) {
+      setCounter(counter + 1);
+    }
+
+    setCurrentQuestionIndex(currentQuestionIndex + 1);
+    setSelectedAnswer('');
   };
 
-  if(currentQuestionIndex >= tabQuestions.length){
-    return(
-        <div className='container'>
-            <h2>quizz terminé !</h2>
-            <p>Merci pour ta participation</p>
-            <Link to="/Resultat"><button className="bouton" style={{background:"blue", color:"white", marginLeft:"43%"}}><a>Voir les résultats de votre quiz</a></button></Link>
-        </div>
+  if (currentQuestionIndex >= tabQuestions.length) {
+    return (
+      <div className='quiz'>
+        <h2 style={{ textAlign: "center", marginTop: "10%" }}>Quiz terminé !</h2>
+        <p style={{ textAlign: "center" }}>Merci pour ta participation</p>
+        <p style={{ textAlign: "center" }}>Score final : {counter} / {tabQuestions.length}</p>
+        <Link to="/Resultat/math"><button className="bouton" style={{ background: "blue", color: "white", marginLeft: "44%" }}>Voir les résultats de votre quiz</button></Link>
+        <Link to="/" className="navbar-brand"><button className="bouton" style={{background:"blue", color:"white", marginLeft:"44%"}}>Retourner à l'accueil</button></Link>
+      </div>
     );
   }
 
   return (
     tabQuestions.length > 0 && (
-      <div className='container'>
-        <h4>Question {currentQuestionIndex + 1} / {tabQuestions.length}</h4>
-        <p>{tabQuestions[currentQuestionIndex].questionTxt}</p>
+      <div className='quiz'>
+        <h1 style={{ textAlign: "center", marginTop: "10%" }}>Audio bouton</h1>
+        <p style={{ textAlign: "center" }}>{tabQuestions[currentQuestionIndex].questionTxt}</p>
 
-        <div className='form-check'>
-            <input
-                className='form-check-input'
-                type='radio'
-                name='choix'
-                value={tabQuestions[currentQuestionIndex].choix1}
-                onChange={(e) => setSelectedAwnser(e.target.value)}
-                />
-                <label className='form-check-label'>
-                    {tabQuestions[currentQuestionIndex].choix1}
-
-                </label>
-        </div>
-
-        <div className='form-check'>
-            <input 
-            className='form-check-input'
-            type='radio'
-            name='choix'
-            value={tabQuestions[currentQuestionIndex].choix2}
-            onChange={(e) => setSelectedAwnser(e.target.value)}
-            />
-
-            <label className="form-check-label">
-                {tabQuestions[currentQuestionIndex].choix2}
-
-            </label> 
-        </div>
-
-        <div className='form-check'>
-            <input
-            className='form-check-input'
-            type='radio'
-            name='choix'
-            value={tabQuestions[currentQuestionIndex].choix3}
-            onChange={(e) => setSelectedAwnser(e.target.value)}
-            
-            />
-
-            <label className="form-check-label">
-            {tabQuestions[currentQuestionIndex].choix3}
+        <div className="custom-radio-group">
+          {melangerReponse.map((choix, index) => (
+            <label className="custom-radio-container" key={index}>
+              <input
+                type="radio"
+                name="custom-radio"
+                value={choix}
+                checked={selectedAnswer === choix}
+                onChange={(e) => setSelectedAnswer(e.target.value)}
+              />
+              <span className="custom-radio-checkmark"></span>
+              {choix}
             </label>
-
-        </div>
-        
-        
-        <div className='from-check'>
-            <input
-            className='from-check-input'
-            type='radio'
-            name='choix'
-            value={tabQuestions[currentQuestionIndex].bonneReponse}
-            onChange={(e) => setSelectedAwnser(e.target.value)}
-            />
-            <label className='form-check-label'>
-                {tabQuestions[currentQuestionIndex].bonneReponse}
-            </label>
+          ))}
         </div>
 
         {errorMessage && (
-            <div className='alert alert-danger mt-3' role='alert'>
-                {errorMessage}
-            </div>
+          <div className="alert alert-danger mt-3" role="alert" style={{ textAlign: "center" }}>
+            {errorMessage}
+          </div>
         )}
 
-            <button
-            className='btn btn-primary mt-3'
-            onClick={handleNext}
-            
-            >
-                Suivant
-
-            </button>
-        
-
-
-
+        <div style={{ textAlign: "center", marginTop: "20px" }}>
+          <button className="btn btn-primary" onClick={handleNext}>
+            Suivant
+          </button>
+        </div>
       </div>
     )
   );
 }
 
-export default QuizCapital;
+export default QuizMath;

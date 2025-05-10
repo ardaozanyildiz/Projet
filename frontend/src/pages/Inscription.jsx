@@ -49,7 +49,7 @@ function Login() {
                 <span>Mots de passe</span>
             </label>
             <button type="submit" className="submit">Submit</button>
-            <p className="signin">Si tu as déjà un compte? <a><Link to="/Signin">Connecte toi</Link></a></p>
+            <p className="signin">Si tu as déjà un compte?<Link to="/Signin">Connecte toi</Link></p>
         </form>
         </div>
 

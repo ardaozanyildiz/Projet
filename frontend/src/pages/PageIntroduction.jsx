@@ -11,8 +11,8 @@ function PageIntroduction(props) {
         <div>
             <h1>Reglement-Option Audio ou ecrit avec un bouton</h1>
                 
-                    <Link to="/QuizCapital"><button><a>Jouer version Audio</a></button></Link>
-                    <Link to="/QuizCapital"><button><a>Jouer version Ecrit</a></button></Link>
+                    <Link to="/QuizCapital"><button>Jouer version Audio</button></Link>
+                    <Link to="/QuizCapital"><button>Jouer version Ecrit</button></Link>
 
         </div>
     );

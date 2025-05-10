@@ -17,28 +17,28 @@ function HomePages(props) {
                     <div className="card-details">
                         <p className="text-title">Quiz de Math</p>
                     </div>
-                    <Link to="/QuizMath"><button className="card-button" style={{background:"#5dc75f"}}><a>Jouer</a></button></Link>
+                    <Link to="/QuizMath"><button className="card-button" style={{background:"#5dc75f"}}>Jouer</button></Link>
                 </div>
 
                 <div className="card" style={{ borderRadius: "20px", backgroundImage: "url('./src/image/Francais.png')", backgroundSize:"cover"}}>
                 <div className="card-details">
                         <p className="text-title">Quiz Francais</p>
                     </div>
-                    <Link to="/QuizFr"><button className="card-button" style={{background:"#dbba76"}}><a>Jouer</a></button></Link>
+                    <Link to="/QuizFr"><button className="card-button" style={{background:"#dbba76"}}>Jouer</button></Link>
                 </div>
 
                 <div className="card" style={{ borderRadius: "20px", backgroundImage: "url('./src/image/Capitale.png')", backgroundSize:"cover"}}>
                     <div className="card-details">
                         <p className="text-title">Quiz Capital</p>
                     </div>
-                    <Link to="/PageIntroduction"><button className="card-button" style={{background:"#e67d2e"}}><a>Jouer</a></button></Link>
+                    <Link to="/PageIntroduction"><button className="card-button" style={{background:"#e67d2e"}}>Jouer</button></Link>
                 </div>
 
                 <div className="card" style={{ borderRadius: "20px", backgroundImage: "url('./src/image/User.png')", backgroundSize:"cover"}}>
                     <div className="card-details">
                         <p className="text-title">Quiz Utilisateur</p>
                     </div>
-                    <Link to="/QuizUtilisateur"><button className="card-button" style={{background:"#8bd7e8"}}><a>Jouer</a></button></Link>
+                    <Link to="/QuizUtilisateur"><button className="card-button" style={{background:"#8bd7e8"}}>Jouer</button></Link>
                 </div>
             </div>
         </div>
