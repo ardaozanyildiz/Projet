@@ -14,7 +14,7 @@ function QuizFr() {
   
   const loadAllQuestions = async () => {
     try {
-      const result = await axios.get('http://localhost:8888/questions/arda/francais');
+      const result = await axios.get('http://localhost:8888/questions/getByCategory/francais');
       setQuestions(result.data);
     } catch (error) {
       console.error("Erreur lors du chargement des questions :", error);
@@ -61,7 +61,7 @@ function QuizFr() {
         <h2 style={{ textAlign: "center", marginTop: "10%" }}>Quiz terminé !</h2>
         <p style={{ textAlign: "center" }}>Merci pour ta participation</p>
         <p style={{ textAlign: "center" }}>Score final : {counter} / {tabQuestions.length}</p>
-        <Link to="/Resultat/math"><button className="bouton" style={{ background: "blue", color: "white", marginLeft: "44%" }}>Voir les résultats de votre quiz</button></Link>
+        <Link to="/Resultat/francais"><button className="bouton" style={{ background: "blue", color: "white", marginLeft: "44%" }}>Voir les résultats de votre quiz</button></Link>
         <Link to="/" className="navbar-brand"><button className="bouton" style={{background:"blue", color:"white", marginLeft:"44%"}}>Retourner à l'accueil</button></Link>
       </div>
     );

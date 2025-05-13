@@ -60,7 +60,7 @@ function QuizzClient() {
     setCurrentQuestionIndex(currentQuestionIndex + 1);
   };
 
-  // 👉 Affichage de la fin du quiz
+
   if (currentQuestionIndex >= tabQuestions.length) {
     return (
       <div className='quiz'>
@@ -81,7 +81,7 @@ function QuizzClient() {
     );
   }
 
-  // 👉 Affichage des questions une à une
+  
   return (
     tabQuestions.length > 0 && (
       <div className='quiz'>

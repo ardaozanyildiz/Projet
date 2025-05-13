@@ -14,6 +14,8 @@ function Login() {
         mdp:""
     });
 
+    const[erreurInscription, setErreurInscription] = useState('')
+
     const setAttribut = (e) => {
         const value = e.target.value;
         setClient({...client, [e.target.name]: value})
@@ -29,6 +31,7 @@ function Login() {
                 navigate("/")
             }).catch((error) =>{
             console.log(error);
+            setErreurInscription("erreur: email invalide")
         });
 
     }
@@ -37,6 +40,12 @@ function Login() {
 
         <form className="form" onSubmit={(e) => submitClient(e)} method="post">
             <p className="title">Inscription</p>
+            {erreurInscription && (
+                <div style = {{ color: 'red', textAlign: 'center', marginBottom: '10px'}}>
+                    {erreurInscription}
+
+                </div>
+            )}
             <p className="message">Inscris toi maintenant</p>
                     
             <label>

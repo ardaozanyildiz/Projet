@@ -11,7 +11,7 @@ function Resultat() {
     const [Questions, setQuestions] = useState([]);
 
     const loadAllQuestions = async () => {
-        const result = await axios.get(`http://localhost:8888/questions/arda/${category}`);
+        const result = await axios.get(`http://localhost:8888/questions/getByCategory/${category}`);
 
         setQuestions(result.data);
     };

@@ -63,7 +63,7 @@ return (
           </button>
         </Link>
 
-        {/* ➕ Bouton Supprimer */}
+        
         <button
           onClick={() => handleDelete(categorie)}
           style={{

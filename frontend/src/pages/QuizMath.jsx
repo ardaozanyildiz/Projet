@@ -14,7 +14,7 @@ function QuizMath() {
   
   const loadAllQuestions = async () => {
     try {
-      const result = await axios.get('http://localhost:8888/questions/arda/math');
+      const result = await axios.get('http://localhost:8888/questions/getByCategory/math');
       setQuestions(result.data);
     } catch (error) {
       console.error("Erreur lors du chargement des questions :", error);

@@ -8,7 +8,7 @@ import { useContext } from 'react';
 import '../style/Home.css';
 
 
-function Signin(props) {
+function Signin() {
 
     const[client, setClient] = useState({
         email:"",
