@@ -14,7 +14,7 @@ function QuizCapital() {
   
   const loadAllQuestions = async () => {
     try {
-      const result = await axios.get('http://localhost:8888/questions/getByCategory/capitale');
+      const result = await axios.get('http://10.10.2.125:8888/questions/getByCategory/capitale');
       setQuestions(result.data);
     } catch (error) {
       console.error("Erreur lors du chargement des questions :", error);

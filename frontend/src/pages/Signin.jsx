@@ -26,7 +26,7 @@ function Signin() {
 
     const checkClient = (e) =>{
         e.preventDefault();
-        axios.post("http://localhost:8888/clients/verifClient", client)
+        axios.post("http://10.10.2.125:8888/clients/verifClient", client)
             .then((res) =>{
                 if(res.data){
                     localStorage.setItem("user", JSON.stringify(res.data));

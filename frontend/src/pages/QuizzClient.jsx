@@ -19,7 +19,7 @@ function QuizzClient() {
   useEffect(() => {
     const loadQuizQuestions = async () => {
       try {
-        const response = await axios.get(`http://localhost:8888/questions/getQuizzByClient/${user.email}/${categorie}`);
+        const response = await axios.get(`http://10.10.2.125:8888/questions/getQuizzByClient/${user.email}/${categorie}`);
         setTabQuestions(response.data);
       } catch (error) {
         console.error("Erreur lors du chargement des questions :", error);

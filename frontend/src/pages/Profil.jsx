@@ -9,7 +9,7 @@ function Profil() {
  const userData = user;
  const loadAllQuestions = async () => {
    try {
-     const result = await axios.get(`http://localhost:8888/questions/getQuestionsByClient/${user.email}`);
+     const result = await axios.get(`http://10.10.2.125:8888/questions/getQuestionsByClient/${user.email}`);
      const questions = result.data;
      const uniqueCategories = [...new Set(questions.map(q => q.category))];
      setCategoriesUniques(uniqueCategories);

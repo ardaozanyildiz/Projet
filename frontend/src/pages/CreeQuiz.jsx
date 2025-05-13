@@ -71,7 +71,7 @@ const handleSubmit = async () => {
       questions: questions,
     };
 
-    const response = await axios.post('http://localhost:8888/questions/createQuizz', requete);
+    const response = await axios.post('http://10.10.2.125:8888/questions/createQuizz', requete);
 
     if (response.data.includes("existe")) {
       alert("Vous avez déjà créé un quiz avec ce nom.");

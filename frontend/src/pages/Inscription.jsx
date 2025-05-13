@@ -26,7 +26,7 @@ function Login() {
 
     const submitClient = (e) =>{
         e.preventDefault();
-        axios.post("http://localhost:8888/clients/createClient", client)
+        axios.post("http://10.10.2.125:8888/clients/createClient", client)
             .then(() =>{
                 navigate("/")
             }).catch((error) =>{

@@ -11,7 +11,7 @@ function Resultat() {
     const [Questions, setQuestions] = useState([]);
 
     const loadAllQuestions = async () => {
-        const result = await axios.get(`http://localhost:8888/questions/getByCategory/${category}`);
+        const result = await axios.get(`http://10.10.2.125:8888/questions/getByCategory/${category}`);
 
         setQuestions(result.data);
     };

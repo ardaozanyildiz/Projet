@@ -14,7 +14,7 @@ function QuizMath() {
   
   const loadAllQuestions = async () => {
     try {
-      const result = await axios.get('http://localhost:8888/questions/getByCategory/math');
+      const result = await axios.get('http://10.10.2.125:8888/questions/getByCategory/math');
       setQuestions(result.data);
     } catch (error) {
       console.error("Erreur lors du chargement des questions :", error);

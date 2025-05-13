@@ -13,7 +13,7 @@ function QuizUtilisateur() {
 
 const afficheQuizzs = async () => {
   try {
-    const response = await axios.get(`http://localhost:8888/questions/getQuestionsByClient/${user.email}`);
+    const response = await axios.get(`http://10.10.2.125:8888/questions/getQuestionsByClient/${user.email}`);
     const data = response.data;
 
     const uniqueCategories = [...new Set(data.map(q => q.category))];
@@ -30,7 +30,7 @@ useEffect(() => {
 
 const handleDelete = async (categorie) => {
   try {
-    await axios.delete(`http://localhost:8888/questions/supprimerQuizz/${user.email}/${categorie}`);
+    await axios.delete(`http://10.10.2.125:8888/questions/supprimerQuizz/${user.email}/${categorie}`);
     setCategories(prev => prev.filter(cat => cat !== categorie));
     alert("Quiz supprimé avec succès !");
   } catch (error) {
