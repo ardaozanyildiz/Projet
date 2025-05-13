@@ -19,7 +19,8 @@ import Profil from "./pages/Profil";
 import FormQuizz from "./pages/FormQuizz";
 import CreeQuiz from "./pages/CreeQuiz";
 import Resultat from "./pages/Resultat";
-import GestionQuiz from "./pages/GestionQuiz"
+import GestionQuiz from "./pages/GestionQuiz";
+import QuizzClient from "./pages/QuizzClient";
 import { UserProvider } from "./context/UserContext";
 
 function App() {  
@@ -44,6 +45,8 @@ function App() {
             <Route path='/CreeQuiz' element={<CreeQuiz/>} />
             <Route path='/Resultat/:category' element={<Resultat />} />
             <Route path='/GestionQuiz' element={<GestionQuiz />} />
+            <Route path="/jouer/:categorie" element={<QuizzClient />} />
+
             
             <Route path='*' element={<NotFound/>} />
         </Routes>

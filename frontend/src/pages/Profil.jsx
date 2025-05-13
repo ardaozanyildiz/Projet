@@ -1,57 +1,41 @@
 //Hamza
 
-import React from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import '../App.css';
 import { UserContext } from '../context/UserContext';
-import { useContext } from 'react';
-import { useState } from 'react';
-import { useEffect } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
-
-
-function Profil  ()  {
-
-
-  const[lstQuestions, setLstQuestions] = useState([])
-
-
-
+function Profil() {
+  const [lstQuestions, setLstQuestions] = useState([]);
   const { user } = useContext(UserContext);
-  
   const userData = user;
-
 
   const loadAllQuestions = async () => {
     try {
       const result = await axios.get(`http://localhost:8888/questions/getQuestionsByClient/${user.email}`);
-      console.log(result.data);
       setLstQuestions(result.data);
     } catch (error) {
       console.error("Erreur lors du chargement des questions :", error);
     }
   };
-  
+
   useEffect(() => {
     loadAllQuestions();
   }, []);
 
   return (
-
-    
     <div className="container-fluid container-lg py-4">
       <div className="row g-4">
-        {/* Colonne de gauche */}
+        
         <div className="col-12 col-sm-6 col-lg-4">
-          {/* En-tête du profil */}
-          <div className="card h-100" style={{ 
-            borderRadius: '15px', 
+          <div className="card h-100" style={{
+            borderRadius: '15px',
             boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
             transition: 'transform 0.2s'
           }}>
             <div className="card-body d-flex flex-column align-items-center p-4">
-              <div 
+              <div
                 className="rounded-circle d-flex align-items-center justify-content-center mb-3"
                 style={{
                   width: '80px',
@@ -59,12 +43,7 @@ function Profil  ()  {
                   backgroundColor: '#007bff',
                   color: 'white',
                   fontSize: '2rem',
-                  fontWeight: 'bold',
-                  '@media (min-width: 768px)': {
-                    width: '100px',
-                    height: '100px',
-                    fontSize: '2.5rem'
-                  }
+                  fontWeight: 'bold'
                 }}
               >
                 {userData.email.charAt(0)}
@@ -79,117 +58,49 @@ function Profil  ()  {
           </div>
         </div>
 
-        {/* Colonne du milieu */}
+        
         <div className="col-12 col-sm-6 col-lg-4">
-          <div className="d-flex flex-column gap-4 h-100">
-            {/* Meilleur score */}
-            <div className="card" style={{ 
-              borderRadius: '15px', 
-              boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
-              transition: 'transform 0.2s'
-            }}>
-              <div className="card-body p-4">
-                <h3 className="mb-3" style={{ fontSize: 'clamp(1.1rem, 3vw, 1.3rem)', fontWeight: '600' }}>
-                  Meilleur Score
-                </h3>
-                <div style={{ 
-                  fontSize: 'clamp(1.8rem, 5vw, 2.5rem)', 
-                  fontWeight: 'bold', 
-                  color: '#007bff', 
-                  textAlign: 'center' 
-                }}>
-                  {userData.highscore} points
-                </div>
-              </div>
-            </div>
-
-            {/* Mes Quizz Créés */}
-            <div className="card flex-grow-1" style={{ 
-              borderRadius: '15px', 
-              boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
-              transition: 'transform 0.2s'
-            }}>
-              <div className="card-body p-4">
-                <div className="d-flex justify-content-between align-items-center mb-4">
-                  <h3 style={{ fontSize: 'clamp(1.1rem, 3vw, 1.3rem)', fontWeight: '600', margin: 0 }}>
-                    Mes Quizz Créés
-                  </h3>
-                  
-                  <Link to="/CreeQuiz"><button className="btn btn-primary btn-sm" >
-                    + Créer un quizz
-                  </button>
-                  </Link>
-                  <Link to="/GestionQuiz"><button className="btn btn-primary btn-sm" >
-                    Gerer le quiz
-                  </button>
-                  </Link>
-                </div>
-                <div className="list-group">
-                  {lstQuestions.map((quizz, index) => (
-                    <div 
-                      key={index} 
-                      className="list-group-item d-flex justify-content-between align-items-center p-3"
-                      style={{ 
-                        border: 'none', 
-                        backgroundColor: index % 2 === 0 ? '#f8f9fa' : 'white', 
-                        borderRadius: '8px', 
-                        marginBottom: '8px',
-                        transition: 'background-color 0.2s',
-                        cursor: 'pointer'
-                      }}
-                    >
-                      <span style={{ fontWeight: '500' }}>{quizz.category}</span>
-                      <i className="fas fa-chevron-right text-muted"></i>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Colonne de droite */}
-        <div className="col-12 col-sm-12 col-lg-4">
-          {/* Quizz complétés */}
-          <div className="card h-100" style={{ 
-            borderRadius: '15px', 
+          <div className="card flex-grow-1" style={{
+            borderRadius: '15px',
             boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
             transition: 'transform 0.2s'
           }}>
             <div className="card-body p-4">
-              <h3 className="mb-4" style={{ fontSize: 'clamp(1.1rem, 3vw, 1.3rem)', fontWeight: '600' }}>
-                Derniers Quizz Complétés
-              </h3>
+              <div className="d-flex justify-content-between align-items-center mb-4">
+                <h3 style={{ fontSize: 'clamp(1.1rem, 3vw, 1.3rem)', fontWeight: '600', margin: 0 }}>
+                  Mes Quizz Créés
+                </h3>
+                <Link to="/CreeQuiz">
+                  <button className="btn btn-primary btn-sm">+ Créer un quizz</button>
+                </Link>
+              </div>
               <div className="list-group">
-                {/*userData.quizzCompletes.map((quizz, index) => (
-                  <div 
-                    key={index} 
+                {lstQuestions.map((quizz, index) => (
+                  <div
+                    key={index}
                     className="list-group-item d-flex justify-content-between align-items-center p-3"
-                    style={{ 
-                      border: 'none', 
-                      backgroundColor: index % 2 === 0 ? '#f8f9fa' : 'white', 
-                      borderRadius: '8px', 
+                    style={{
+                      border: 'none',
+                      backgroundColor: index % 2 === 0 ? '#f8f9fa' : 'white',
+                      borderRadius: '8px',
                       marginBottom: '8px',
-                      transition: 'background-color 0.2s'
+                      transition: 'background-color 0.2s',
+                      cursor: 'pointer'
                     }}
                   >
-                    <span style={{ fontWeight: '500' }}>{quizz.nom}</span>
-                    <span className="badge rounded-pill" style={{ 
-                      backgroundColor: '#007bff', 
-                      fontSize: 'clamp(0.8rem, 2vw, 0.9rem)', 
-                      padding: '8px 12px' 
-                    }}>
-                      {quizz.score} points
-                    </span>
+                    <span style={{ fontWeight: '500' }}>{quizz.category}</span>
+                    <i className="fas fa-chevron-right text-muted"></i>
                   </div>
-                ))*/}
+                ))}
               </div>
             </div>
           </div>
         </div>
+
+      
       </div>
     </div>
   );
-};
+}
 
-export default Profil; 
+export default Profil;

@@ -3,7 +3,7 @@ import '../style/Quizz.css';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
-function QuizMath() {
+function QuizFr() {
   const [tabQuestions, setQuestions] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState('');
@@ -105,4 +105,4 @@ function QuizMath() {
   );
 }
 
-export default QuizMath;
+export default QuizFr;

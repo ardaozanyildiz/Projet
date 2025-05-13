@@ -4,93 +4,84 @@ import React, { useEffect, useState } from 'react';
 import '../style/Quizz.css';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
+import { UserContext } from '../context/UserContext';
+import { useContext } from 'react';
 
 function QuizUtilisateur() {
-  const [tabQuestions, setQuestions] = useState([]);
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const [selectedAnswer, setSelectedAnswer] = useState('');
-  const [errorMessage, setErrorMessage] = useState('');
-  const [counter, setCounter] = useState(0)
+  const { user } = useContext(UserContext);
+  const [categories, setCategories] = useState([]);
 
-  const loadAllQuestions = async () => {
-    try {
-      const result = await axios.get('http://localhost:8888/questions/arda/utilisateur');
-      setQuestions(result.data);
-    } catch (error) {
-      console.error("Erreur lors du chargement des questions :", error);
-    }
-  };
+const afficheQuizzs = async () => {
+  try {
+    const response = await axios.get(`http://localhost:8888/questions/getQuestionsByClient/${user.email}`);
+    const data = response.data;
 
-  useEffect(() => {
-    loadAllQuestions();
-  }, []);
-
-  const handleNext = () => {
-    if (selectedAnswer === '') {
-      setErrorMessage("⚠️ Veuillez sélectionner une réponse avant de continuer.");
-      return;
-    }
-    setErrorMessage('');
-
-    if(selectedAnswer === tabQuestions[currentQuestionIndex].bonneReponse){
-      setCounter(counter + 1)
-    }
-    setCurrentQuestionIndex(currentQuestionIndex + 1);
-    setSelectedAnswer('');
-  };
-
-  if (currentQuestionIndex >= tabQuestions.length) {
-    return (
-      <div className='quiz'>
-        <h2 style={{ textAlign: "center", marginTop: "10%" }}>Quiz terminé !</h2>
-        <p style={{ textAlign: "center" }}>Merci pour ta participation</p>
-        <p style={{ textAlign: "center" }}>Score final : {counter} / {tabQuestions.length}</p> 
-        <Link to="/Resultat/utilisateur"><button className="bouton" style={{background:"blue", color:"white", marginLeft:"44%"}}>Voir les résultats de votre quiz</button></Link>
-
-      </div>
-    );
+    const uniqueCategories = [...new Set(data.map(q => q.category))];
+    setCategories(uniqueCategories);
+  } catch (error) {
+    console.error("Erreur lors du chargement des catégories :", error);
   }
+};
 
-  return (
-    tabQuestions.length > 0 && (
-      <div className='quiz'>
-        <h1 style={{ textAlign: "center", marginTop: "10%" }}>Audio bouton</h1>
-        <p style={{ textAlign: "center" }}>{tabQuestions[currentQuestionIndex].questionTxt}</p>
 
-        <div className="custom-radio-group">
-          {[tabQuestions[currentQuestionIndex].choix1,
-            tabQuestions[currentQuestionIndex].choix2,
-            tabQuestions[currentQuestionIndex].choix3,
-            tabQuestions[currentQuestionIndex].bonneReponse].map((choix, index) => (
-            <label className="custom-radio-container" key={index}>
-              <input
-                type="radio"
-                name="custom-radio"
-                value={choix}
-                checked={selectedAnswer === choix}
-                onChange={(e) => setSelectedAnswer(e.target.value)}
-              />
-              <span className="custom-radio-checkmark"></span>
-              {choix}
-            </label>
-          ))}
-        </div>
+useEffect(() => {
+  afficheQuizzs();
+}, [user.email]);
 
-        {errorMessage && (
-          <div className="alert alert-danger mt-3" role="alert" style={{ textAlign: "center" }}>
-            {errorMessage}
-          </div>
-        )}
+const handleDelete = async (categorie) => {
+  try {
+    await axios.delete(`http://localhost:8888/questions/supprimerQuizz/${user.email}/${categorie}`);
+    setCategories(prev => prev.filter(cat => cat !== categorie));
+    alert("Quiz supprimé avec succès !");
+  } catch (error) {
+    alert("Erreur lors de la suppression du quiz.");
+    console.error(error);
+  }
+};
 
-        <div style={{ textAlign: "center", marginTop: "20px" }}>
-          <button className="btn btn-primary" onClick={handleNext}>
-            Suivant
+
+
+return (
+  <div style={{ textAlign: 'center', marginTop: '5%' }}>
+    <h2>Mes Quizz</h2>
+    {categories.map((categorie, index) => (
+      <div key={index} style={{ marginBottom: '10px' }}>
+        <Link to={`/jouer/${categorie}`} style={{ textDecoration: 'none' }}>
+          <button
+            style={{
+              padding: '10px 20px',
+              marginRight: '10px',
+              borderRadius: '10px',
+              fontSize: '1rem',
+              backgroundColor: '#007bff',
+              color: 'white',
+              border: 'none',
+              cursor: 'pointer'
+            }}
+          >
+            {categorie}
           </button>
-          
-        </div>
+        </Link>
+
+        {/* ➕ Bouton Supprimer */}
+        <button
+          onClick={() => handleDelete(categorie)}
+          style={{
+            padding: '10px 15px',
+            backgroundColor: '#dc3545',
+            color: 'white',
+            border: 'none',
+            borderRadius: '10px',
+            cursor: 'pointer'
+          }}
+        >
+          Supprimer
+        </button>
       </div>
-    )
-  );
+    ))}
+  </div>
+);
+
 }
 
 export default QuizUtilisateur;
